@@ -31,12 +31,16 @@ jobs:
           echo "=== composeApp/build ==="
           ls -R composeApp/build || true
 
-      
-      
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p site
+          cp -r composeApp/build/processedResources/js/main/* site/
+          cp -r composeApp/build/kotlin-webpack/js/productionExecutable/* site/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: composeApp/build/dist/wasmJs/productionExecutable
+          path: site
 
   deploy:
     needs: build
@@ -45,11 +49,3 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
-
-
-
-
-
-
-
-        
