@@ -6,7 +6,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import org.jetbrains.compose.resources.*
-import com.google.gson.*
 import java.util.*
 
 var CardColor = Color(0xFF1A1A1A)
@@ -17,7 +16,6 @@ val LightBlue = Color(0xFFADD8E6)
 val darkGreen = Color(0xFF0A1F0D)
 
 
-val gson = Gson()
 val yes = true
 val no = false
 var <T> m_<T>.it: T
