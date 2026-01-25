@@ -7,13 +7,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import org.jetbrains.compose.resources.*
 import java.util.*
+import kotlinx.css.*
 
-var CardColor = Color(0xFF1A1A1A)
-var InputColor = Color(0xFF272727)
-val DarkBlue = Color(0xFF00008B) 
-val Gold = Color(0xFFFFD700)
-val LightBlue = Color(0xFFADD8E6)
-val darkGreen = Color(0xFF0A1F0D)
+var CardColor = "#1A1A1A"
+var InputColor = "#272727"
+val DarkBlue = "#00008B"
+val Gold = "#FFD700"
+val LightBlue = "#ADD8E6"
+val DarkGreen = "#0A1F0D"
 
 
 val yes = true
