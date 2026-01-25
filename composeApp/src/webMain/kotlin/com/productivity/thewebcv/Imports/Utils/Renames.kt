@@ -6,8 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import org.jetbrains.compose.resources.*
-import java.util.*
-import kotlinx.css.*
+import kotlin.js.Math.*
 
 var CardColor = "#1A1A1A"
 var InputColor = "#272727"
@@ -28,12 +27,16 @@ fun <T> m(value: T) = mutableStateOf(value)
 fun <T> set(state: m_<T>?, value: T) { state?.value = value }
 fun show(state: m_<Bool>?) = set(state, yes)
 fun hide(state: m_<Bool>?) = set(state, no)
-fun Id(): Str { return UUID.randomUUID().toString() }
+fun Id(): Str {
+    val template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+    return template.replace(Regex("[xy]")) {
+        val r = (random() * 16).toInt()
+        val v = if (it.value == "x") r else (r and 0x3 or 0x8)
+        v.toString(16)
+    }
+}
 
 val maxInt = Int.MAX_VALUE
-
-typealias Web = WebView
-typealias ctx = Context
 
 typealias Str = String
 typealias Bool = Boolean
