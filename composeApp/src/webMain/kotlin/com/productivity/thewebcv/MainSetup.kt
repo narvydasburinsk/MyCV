@@ -17,3 +17,8 @@ class Greeting {
         return "Hello, ${platform.name}!"
     }
 }
+interface Platform {
+    val name: String
+}
+
+expect fun getPlatform(): Platform
