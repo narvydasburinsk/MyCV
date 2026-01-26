@@ -6,7 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import org.jetbrains.compose.resources.*
-import kotlin.js.Math.*
+import kotlin.random.Random
 
 var CardColor = "#1A1A1A"
 var InputColor = "#272727"
@@ -30,7 +30,7 @@ fun hide(state: m_<Bool>?) = set(state, no)
 fun Id(): Str {
     val template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
     return template.replace(Regex("[xy]")) {
-        val r = (random() * 16).toInt()
+        val r = Random.nextInt(16) // <- fixed
         val v = if (it.value == "x") r else (r and 0x3 or 0x8)
         v.toString(16)
     }
