@@ -14,7 +14,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
-
+import com.productivity.thewebcv.Imports.Utils.*
+import com.productivity.thewebcv.Imports.*
+import com.productivity.thewebcv.*
 import thewebcv.composeapp.generated.resources.Res
 import thewebcv.composeapp.generated.resources.compose_multiplatform
 
