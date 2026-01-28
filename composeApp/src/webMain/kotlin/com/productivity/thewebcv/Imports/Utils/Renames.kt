@@ -40,6 +40,7 @@ val maxInt = Int.MAX_VALUE
 
 typealias Str = String
 typealias Bool = Boolean
+typealias Mod = Modifier
 
 typealias Do = () -> Unit
 typealias DoStr = (Str) -> Unit     
