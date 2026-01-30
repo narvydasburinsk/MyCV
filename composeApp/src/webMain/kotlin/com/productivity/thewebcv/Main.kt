@@ -28,13 +28,35 @@ fun Mod.maxH() = fillMaxHeight()
 
 @Composable
 fun Btn(
-    text: String,
-    onClick: () -> Unit
+    text: Str,
+    onClick: Do
 ) {
     Button(onClick = onClick) {
         Text(text)
     }
 }
+@Composable
+fun Btn(
+    text: ui,
+    onClick: Do
+) {
+    Button(onClick = onClick) {
+        text()
+    }
+}
+
+@Composable
+fun LazzyRow(
+    mod: Mod = Mod,
+    content: @Composable RowScope.() -> Unit
+) {
+    Row(
+        modifier = mod,
+        verticalAlignment = Alignment.CenterVertically,
+        content = content
+    )
+}
+
 
 
 
@@ -45,19 +67,21 @@ fun App() {
             Mod.maxS(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me I AM A SECRET BUTTON!")
+            LazzyRow {
+                Text("Header")
             }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
-            }
+            
+            
+
+            
         }
     }
 }
+
+
+
+
+
+
+
+
