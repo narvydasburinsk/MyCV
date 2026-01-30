@@ -14,14 +14,35 @@ import thewebcv.composeapp.generated.resources.Res
 import thewebcv.composeapp.generated.resources.compose_multiplatform
 
 @Composable
+fun <T> r(value: T) = remember { mutableStateOf(value) }
+val no = false
+val yes = true
+typealias Mod = Modifier
+typealias ui = @Composable () -> Unit
+typealias ui_<T> = @Composable (T) -> Unit
+
+
+fun Mod.maxS() = fillMaxSize()
+fun Mod.maxW() = fillMaxWidth()
+fun Mod.maxH() = fillMaxHeight()
+
+@Composable
+fun Btn(
+    text: String,
+    onClick: () -> Unit
+) {
+    Button(onClick = onClick) {
+        Text(text)
+    }
+}
+
+
+
+@Composable
 fun App() {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
         Column(
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.primaryContainer)
-                .safeContentPadding()
-                .fillMaxSize(),
+            Mod.maxS(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Button(onClick = { showContent = !showContent }) {
