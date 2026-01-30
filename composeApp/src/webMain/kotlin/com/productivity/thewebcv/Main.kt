@@ -13,6 +13,10 @@ import com.productivity.thewebcv.*
 import thewebcv.composeapp.generated.resources.Res
 import thewebcv.composeapp.generated.resources.compose_multiplatform
 
+
+val black = Color.Black
+
+
 @Composable
 fun <T> r(value: T) = remember { mutableStateOf(value) }
 val no = false
@@ -57,16 +61,23 @@ fun LazzyRow(
     )
 }
 
+@Composable
+fun LazyScreen(ui: ui){
+    Column(
+        Mod.maxS().background(black),
+        horizontalAlignment = Alignment.CenterHorizontally,   
+    ) {
+        ui()
+    }
+}
+
 
 
 
 @Composable
 fun App() {
     MaterialTheme {
-        Column(
-            Mod.maxS(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+        LazyScreen {
             LazzyRow {
                 Text("Header")
             }
