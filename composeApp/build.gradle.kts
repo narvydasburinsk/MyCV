@@ -23,15 +23,15 @@ kotlin {
 
        val jsMain by getting {
             dependencies {
-                implementation(compose.web.core)     // Web UI core (Div, Text, etc)
-                implementation(compose.web.css)      // CSS helpers (rgb(), classes, etc)
-                implementation(compose.runtime)      // Compose runtime
+                implementation(compose.html.core)    
+                implementation(compose.html.css)      
+                implementation(compose.runtime)      
             }
         }
         val wasmJsMain by getting {
             dependencies {
-                implementation(compose.web.core)
-                implementation(compose.web.css)
+                implementation(compose.html.core)
+                implementation(compose.html.css)
                 implementation(compose.runtime)
             }
         }
