@@ -21,7 +21,7 @@ kotlin {
 
     sourceSets {
         jvmMain.dependencies {
-            implementation(compose.web.css)
+            implementation(compose.html.css)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
