@@ -23,15 +23,15 @@ kotlin {
 
        val jsMain by getting {
             dependencies {
-                implementation(compose.html.core)    
-                implementation(compose.html.css)      
+                implementation("org.jetbrains.compose.html:html-core:1.9.3")  // matches CMP version
+                implementation("org.jetbrains.compose.html:html-css:1.9.3")   // matches CMP version      
                 implementation(compose.runtime)      
             }
         }
         val wasmJsMain by getting {
             dependencies {
-                implementation(compose.html.core)
-                implementation(compose.html.css)
+                implementation("org.jetbrains.compose.html:html-core:1.9.3")  // matches CMP version
+                implementation("org.jetbrains.compose.html:html-css:1.9.3")   // matches CMP version      
                 implementation(compose.runtime)
             }
         }
