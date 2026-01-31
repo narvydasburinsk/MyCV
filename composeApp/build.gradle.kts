@@ -7,31 +7,37 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
+repositories {
+    google()
+    mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+}
+
 kotlin {
     js {
         browser()
         binaries.executable()
     }
-    
+
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
         binaries.executable()
     }
-    
+
     sourceSets {
 
-       val jsMain by getting {
+        val jsMain by getting {
             dependencies {
-                implementation("org.jetbrains.compose.web:web-core:1.9.3")
-                implementation("org.jetbrains.compose.web:web-css:1.9.3")
-                implementation(compose.runtime)      
+                implementation(compose.web.core)
+                implementation(compose.web.css)
+                implementation(compose.runtime)
             }
         }
         val wasmJsMain by getting {
             dependencies {
-                implementation("org.jetbrains.compose.web:web-core:1.9.3")  // matches CMP version
-                implementation("org.jetbrains.compose.web:web-css:1.9.3")   // matches CMP version      
+                implementation(compose.web.core)
+                implementation(compose.web.css)
                 implementation(compose.runtime)
             }
         }
@@ -50,13 +56,5 @@ kotlin {
         }
     }
 }
-
-
-
-
-
-
-
-
 
 
