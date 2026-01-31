@@ -14,7 +14,7 @@ import thewebcv.composeapp.generated.resources.Res
 import thewebcv.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.web.css.*
 
-val black = Color.rgb(0, 0, 0)
+val black = rgb(0, 0, 0)
 
 
 @Composable
