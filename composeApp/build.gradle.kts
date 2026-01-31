@@ -7,12 +7,6 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
-repositories {
-    google()
-    mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-}
-
 kotlin {
     js {
         browser()
@@ -26,20 +20,8 @@ kotlin {
     }
 
     sourceSets {
-
-        val jsMain by getting {
-            dependencies {
-                implementation(compose.web.core)
-                implementation(compose.web.css)
-                implementation(compose.runtime)
-            }
-        }
-        val wasmJsMain by getting {
-            dependencies {
-                implementation(compose.web.core)
-                implementation(compose.web.css)
-                implementation(compose.runtime)
-            }
+        jvmMain.dependencies {
+            implementation(compose.web.css)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
